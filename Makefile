@@ -33,6 +33,9 @@ kitten.npz:
 synset.txt:
 	curl -L https://s3.amazonaws.com/onnx-model-zoo/synset.txt -o synset.txt
 
+imagenet-simple-labels.json:
+	curl -L https://raw.githubusercontent.com/anishathalye/imagenet-simple-labels/master/imagenet-simple-labels.json -o imagenet-simple-labels.json
+
 onnx.txt: kitten.jpg synset.txt
 	python3 onnxbenchmark.py > onnx.txt
 	cat onnx.txt
